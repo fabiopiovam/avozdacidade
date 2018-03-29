@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>
+        {% block title2 %}{% endblock %} | {% block title %}{% endblock %} 
+    </title>
+    <meta charset="utf-8">
+    <style type="text/css">
+      body {
+        background-image: url('{% static "img/bg.jpeg" %}');
+        background-repeat: no-repeat;
+        background-size: 102% auto;
+        background-position-y: -102px;
+      }
+    </style>
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+  </body>
+</html>

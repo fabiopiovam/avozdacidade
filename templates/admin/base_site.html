@@ -1,0 +1,14 @@
+{% extends "admin/base_site.html" %}
+
+{% block extrahead %}
+<script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>
+{{ block.super }}
+{% endblock %}
+
+{% block title %}{{ title }} | Nossa Radio - A voz da cidade - Admin{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Nossa Radio - A voz da cidade - Admin</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
