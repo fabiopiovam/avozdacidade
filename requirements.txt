@@ -4,7 +4,6 @@ Django==2.0.3
 django-admin-sortable==2.1.4
 django-ckeditor==5.4.0
 django-js-asset==1.0.0
--e git://github.com/laborautonomo/django-la-carousel.git@2417000dccf20c8f28dfdf7b83e07a56179994e4#egg=django_la_carousel
 -e git://github.com/laborautonomo/django-la-cms.git@47810dd0a68c30d44e0372541076f4c94faaaf45#egg=django_la_cms
 -e git://github.com/laborautonomo/django-la-contact-form.git@00e4d0c95c1b0d9aa0e130e2a9e6950a0bc09d9b#egg=django_la_contact_form
 -e git://github.com/laborautonomo/django-la-ganalytics.git@b9dfd5fb6bebf11ba5e2db91b1baf6a51c0c72a6#egg=django_la_ganalytics
@@ -15,7 +14,7 @@ easy-thumbnails==2.5
 gunicorn==19.7.1
 olefile==0.45.1
 Pillow==5.0.0
-# pkg-resources==0.0.0
+pkg-resources==0.0.0
 psycopg2==2.7.4
 psycopg2-binary==2.7.4
 pytz==2018.3
