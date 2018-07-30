@@ -13,9 +13,39 @@
         background-size: 102% auto;
         background-position-y: -102px;
       }
+
+      audio {
+        width: 99%;
+        position: absolute;
+        bottom: 20px;
+        border-radius: 10px;
+      }
     </style>
   </head>
-  <body>
+  <body onmousemove="player_fadein();">
     {% block content %}{% endblock %}
+    <audio id="player" controls autoplay preload="metadata" volume="0.2">
+      <source src="http://stream.nossaradio.org:8000/ogg" type="audio/ogg">
+      <source src="http://stream.nossaradio.org:8000/mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio em HTML5, atualize-o.
+    </audio>
+
+    <script type="text/javascript">
+      var audio = document.getElementById("player");
+      audio.volume = 0.2;
+
+      function player_fadeout(){
+        setTimeout(function(){
+          document.getElementById("player").style.display = "none"; 
+        }, 3000);
+      }
+
+      function player_fadein(){
+        document.getElementById("player").style.display = "block"; 
+        player_fadeout();
+      }
+
+      player_fadeout();
+    </script>
   </body>
 </html>
