@@ -1,1 +1,49 @@
 {% extends "base.html" %}
+
+{% load carousel_tags %}
+
+
+{% block content %}
+
+{% generate_carousel 'principal' %}
+
+<div id="logo" class="layer-info">
+	<img src="/static/img/logo-nossa-radio-cubatao-sp.png">
+</div>
+
+<audio id="player" class="layer-info" controls autoplay preload="metadata" volume="0.2">
+  <source src="http://stream.nossaradio.org:8000/ogg" type="audio/ogg">
+  <source src="http://stream.nossaradio.org:8000/mp3" type="audio/mpeg">
+  Seu navegador não suporta áudio em HTML5, atualize-o.
+</audio>
+
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+
+	// Player initial volume
+  var audio = document.getElementById("player");
+  audio.volume = 0.2;
+
+
+  // prepare layer-info
+  $(".carousel-control").addClass('layer-info');
+
+
+  // Toggle layer-info onmousemove
+  var layer_info = $(".layer-info");
+	var timeout;
+
+	document.addEventListener("mousemove", function() {
+		layer_info.show(); 
+	  if (timeout) clearTimeout(timeout);
+	  timeout = setTimeout(mouseStop, 5000);
+	});
+
+	function mouseStop() {
+	  layer_info.hide();
+	}
+</script>
+
+{% endblock %}
